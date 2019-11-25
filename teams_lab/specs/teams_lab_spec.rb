@@ -20,4 +20,23 @@ class TestTeamsLab < MiniTest::Test
     assert_equal("Carter", team.coach)
     end
 
+    def test_set_coach_name
+      team = Team.new("Lions", ["John, Steve"], "Carter")
+      team.coach = "Dave"
+      assert_equal("Dave", team.coach)
+    end
+
+    def test_add_new_player_to_players
+      team = Team.new("Lions", ["John", "Steve"], "Carter")
+      team.add_new_player("Andrew")
+      assert_equal(["John", "Steve", "Andrew"], team.players)
+
+    end
+
+    def test_check_player_is_in_player_list
+      team = Team.new("Lions", ["John", "Steve"], "Carter")
+      team
+    end
+
+
 end
