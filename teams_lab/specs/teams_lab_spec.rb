@@ -35,7 +35,8 @@ class TestTeamsLab < MiniTest::Test
 
     def test_check_player_is_in_player_list
       team = Team.new("Lions", ["John", "Steve"], "Carter")
-      team
+      assert_equal(true, team.check_player_is_in_player_list("John"))
+
     end
 
 
