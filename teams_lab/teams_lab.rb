@@ -1,12 +1,14 @@
 class Team
 
-  attr_reader :name, :players, :coach
-  attr_writer :name, :players,   :coach
+  attr_reader :name, :players, :coach, :points
+  attr_writer :name, :players,   :coach, :points
 
-  def initialize(name, players, coach)
+
+  def initialize(name, players, coach, points)
     @name = name
     @players = players
     @coach = coach
+    @points = points
   end
 
   def add_new_player(player_name)
@@ -19,6 +21,18 @@ class Team
       return false if player != player_name
     end
   end
+  def checks_whether_team_has_won_or_lost(opponent)
+    if @points > opponent.gets_team_points
+      return "your team wins!"
+    elsif @points < opponent.gets_team_points
+      "your opponent wins!"
+    else
+      "its a draw!"
+    end
+  end
 
+  def gets_team_points
+    return @points
+  end
 
-end
+  end
