@@ -19,6 +19,17 @@ class TestBankAccount < MiniTest::Test
     assert_equal("e30", student.cohort)
   end
 
-  # def test_recording_a_name
-  # end
+  def test_sets_student_name
+    student = Student.new("Steven", "e30")
+    student.name = "Greg"
+    assert_equal("Greg", student.name())
+  end
+  def test_sets_cohort
+    student = Student.new("Steven", "e30")
+    student.cohort = "e50"
+    assert_equal("e50", student.cohort())
+  end
 end
+
+# def test_recording_a_name
+# end
