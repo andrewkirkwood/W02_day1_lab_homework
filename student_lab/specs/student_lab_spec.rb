@@ -3,9 +3,7 @@ require('minitest/reporters')
 require_relative('../student_lab')
 Minitest::Reporters.use! Minitest::Reporters::SpecReporter.new
 
-class TestBankAccount < MiniTest::Test
-
-
+class TestStudentLab < MiniTest::Test
 
   def test_returns_a_name
     student = Student.new("John", "e36", "JS")
